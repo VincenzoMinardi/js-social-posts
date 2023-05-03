@@ -20,7 +20,8 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=10"
         },
         "likes": 120,
-        "created": "2021-09-03"
+        "created": "2021-09-03",
+        "createdIt":"09-03.2021",
     },
     {
         "id": 3,
@@ -31,7 +32,8 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=20"
         },
         "likes": 78,
-        "created": "2021-05-15"
+        "created": "2021-05-15",
+        "createdIt":"15-05.2021",
     },
     {
         "id": 4,
@@ -42,7 +44,8 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=20" 
         },
         "likes": 56,
-        "created": "03-04-2021"
+        "created": "2021-04-03",
+        "createdIt":"03-04.2021",
     },
     {
         "id": 5,
@@ -53,7 +56,8 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=29"
         },
         "likes": 95,
-        "created": "05-03-2021"
+        "created": "2021-03-05",
+        "createdIt":"05-04.2021",
     }
 ];
 
@@ -71,7 +75,7 @@ for (let i = 0; i < posts.length; i++) {
         </div> 
          <div class="post-meta__data">
             <div class="post-meta__author">${posts[i].author.name}</div>
-            <div class="post-meta__time"${posts[i].created}</div>
+            <div class="post-meta__time"${posts[i].createdIt}</div>
         </div>                    
     </div>
 </div>
