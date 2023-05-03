@@ -42,7 +42,7 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=20" 
         },
         "likes": 56,
-        "created": "2021-04-03"
+        "created": "03-04-2021"
     },
     {
         "id": 5,
@@ -53,7 +53,7 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=29"
         },
         "likes": 95,
-        "created": "2021-03-05"
+        "created": "05-03-2021"
     }
 ];
 
@@ -82,10 +82,10 @@ for (let i = 0; i < posts.length; i++) {
 <div class="post__footer">
     <div class="likes js-likes">
         <div class="likes__cta">
-            <a class="like-button  js-like-button" href="#" data-postid="${posts[i].id}">
+            <button class="like-button  js-like-button" data-postid="${posts[i].id}">
                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                 <span class="like-button__label">Mi Piace</span>
-            </a>
+            </button>
         </div>
         <div class="likes__counter">
             Piace a <b id="like-counter-1" class="js-likes-counter">${posts[i].likes}</b> persone
@@ -96,12 +96,38 @@ for (let i = 0; i < posts.length; i++) {
 
 }
 
-const eleLikeButton = document.querySelector(".like-button");
+const eleLikeButtons = document.querySelectorAll(".like-button");
+const eleCounters = document.querySelectorAll(".js-likes-counter")
 
-eleLikeButton.addEventListener("click", function(){
+for (let i = 0; i< eleLikeButtons.length; i++){
+const eleLike = eleLikeButtons[i];
+   
+eleLike.addEventListener("click", function(){
 
-    console.log("LIKE")
+    
+    
+  const  eleCounter = eleCounters[i];
+
+/** il pulsate è stato già cliccato **/
+
+if  ( eleLike.classList.contains('like-button--liked')){
+
+    posts[i].likes -= 1
+}
+
+
+else{
+    posts[i].likes += 1
+}
+
+eleLike.classList.toggle('like-button--liked');
+eleCounter.innerHTML = `${posts[i].likes}`
+
 });
+}
 
+// let b = 0
 
+//  b += 1
 
+// b = b + 1
