@@ -9,7 +9,8 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=15"
         },
         "likes": 80,
-        "created": "2021-06-25"
+        "created": "2021-06-25",
+        "createdIt":"25-03.2021",
     },
     {
         "id": 2,
@@ -61,6 +62,10 @@ const posts = [
     }
 ];
 
+arrayEmpty =[];
+
+
+
 
 const elePost = document.querySelector('.posts-list');
 
@@ -75,7 +80,7 @@ for (let i = 0; i < posts.length; i++) {
         </div> 
          <div class="post-meta__data">
             <div class="post-meta__author">${posts[i].author.name}</div>
-            <div class="post-meta__time"${posts[i].createdIt}</div>
+            <div class="post-meta__time">${posts[i].createdIt}</div>
         </div>                    
     </div>
 </div>
@@ -122,6 +127,8 @@ if  ( eleLike.classList.contains('like-button--liked')){
 
 else{
     posts[i].likes += 1
+    arrayEmpty.push('elePost')
+    console.log(arrayEmpty)
 }
 
 eleLike.classList.toggle('like-button--liked');
@@ -130,8 +137,3 @@ eleCounter.innerHTML = `${posts[i].likes}`
 });
 }
 
-// let b = 0
-
-//  b += 1
-
-// b = b + 1
